@@ -33,7 +33,7 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio,
 {
     Eigen::Matrix4f projection = Eigen::Matrix4f::Identity();
 
-    float yTop = std::abs(zNear)*std::tan((MY_PI*eye_fov/180.0)/2.0);
+    float yTop = -std::abs(zNear)*std::tan((MY_PI*eye_fov/180.0)/2.0);
     float yBottom = -yTop;
     float xRight = aspect_ratio*yTop;
     float xLeft = -xRight;
